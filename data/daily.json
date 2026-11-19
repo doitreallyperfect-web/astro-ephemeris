@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-19T16:39:34+00:00",
+  "generated_at_utc": "2026-11-19T16:45:41+00:00",
   "timezone": "Europe/Moscow",
   "date": "2026-11-20",
   "weekday": "пятница",
@@ -16,7 +16,7 @@
     "note": "Planetary positions are calculated values; interpretive text is not generated here."
   },
   "moon": {
-    "phase_approximation": "первая четверть",
+    "phase_approximation": "растущая Луна (между первой четвертью и полнолунием)",
     "elongation_from_sun_deg": 123.6809
   },
   "positions": {
