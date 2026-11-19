@@ -33,10 +33,12 @@ jobs:
         run: python ephemeris.py
       - name: Independent cross-check against Moshier on three dates
         run: python validate.py
+      - name: Independent validation of exact aspects and Moon ingresses
+        run: python validate_events.py
       - name: Commit daily JSON
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/daily.json data/validation.json
+          git add data/daily.json data/validation.json data/event_validation.json
           git diff --cached --quiet || git commit -m "Update daily ephemeris"
           git push
