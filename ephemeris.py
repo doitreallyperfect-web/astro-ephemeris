@@ -142,6 +142,28 @@ def main() -> None:
     for item in aspects:
         item.pop("_key", None)
 
+    # Exact Moon sign ingresses during the Moscow day.
+    moon_samples = all_lons["Moon"]
+    moon_unwrapped = np.unwrap(moon_samples * math.pi / 180.0) * 180.0 / math.pi
+    moon_ingresses = []
+    low = math.floor(min(moon_unwrapped) / 30.0) + 1
+    high = math.floor(max(moon_unwrapped) / 30.0)
+    for boundary_index in range(low, high + 1):
+        boundary = boundary_index * 30.0
+        for j in range(len(moon_unwrapped) - 1):
+            if (moon_unwrapped[j] - boundary) * (moon_unwrapped[j + 1] - boundary) <= 0:
+                def moon_root(hour):
+                    dt = start_utc + timedelta(hours=float(hour))
+                    return wrap_delta(longitude(bodies["Moon"], dt) - boundary)
+                root_hour = brentq(moon_root, sample_hours[j], sample_hours[j + 1])
+                event_dt = start_utc + timedelta(hours=float(root_hour))
+                if start_utc <= event_dt < end_utc:
+                    moon_ingresses.append({
+                        "to_sign": SIGNS[boundary_index % 12],
+                        "exact_time_msk": event_dt.astimezone(MOSCOW).isoformat(timespec="minutes"),
+                    })
+                break
+
     moon_lon = positions["Moon"]["longitude"]
     sun_lon = positions["Sun"]["longitude"]
     elongation = (moon_lon - sun_lon) % 360.0
@@ -179,6 +201,7 @@ def main() -> None:
         "moon": {"phase_approximation": moon_phase, "elongation_from_sun_deg": round(elongation, 4)},
         "positions": positions,
         "exact_aspects": aspects,
+        "moon_ingresses": moon_ingresses,
     }
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
