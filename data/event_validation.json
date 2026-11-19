@@ -1,0 +1,205 @@
+{
+  "primary_source": "JPL DE440s via Skyfield",
+  "validation_source": "Swiss Ephemeris Moshier",
+  "time_zone": "Europe/Moscow",
+  "sampling_step_minutes": 10,
+  "time_tolerance_seconds": 120,
+  "dates": [
+    {
+      "date": "2026-11-20",
+      "aspects": {
+        "primary_count": 5,
+        "moshier_count": 5,
+        "matches": [
+          {
+            "event": {
+              "planet_1": "Sun",
+              "planet_2": "Moon",
+              "aspect": "трин"
+            },
+            "primary_time": "2026-11-20T04:46+03:00",
+            "moshier_time": "2026-11-20T04:46:07+03:00",
+            "difference_seconds": 7.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Neptune",
+              "aspect": "соединение"
+            },
+            "primary_time": "2026-11-20T12:02+03:00",
+            "moshier_time": "2026-11-20T12:02:47+03:00",
+            "difference_seconds": 47.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Pluto",
+              "aspect": "секстиль"
+            },
+            "primary_time": "2026-11-20T14:56+03:00",
+            "moshier_time": "2026-11-20T14:56:26+03:00",
+            "difference_seconds": 26.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Uranus",
+              "aspect": "секстиль"
+            },
+            "primary_time": "2026-11-20T15:54+03:00",
+            "moshier_time": "2026-11-20T15:54:27+03:00",
+            "difference_seconds": 27.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Saturn",
+              "aspect": "соединение"
+            },
+            "primary_time": "2026-11-20T23:44+03:00",
+            "moshier_time": "2026-11-20T23:44:20+03:00",
+            "difference_seconds": 20.0
+          }
+        ],
+        "missing_in_moshier": [],
+        "extra_in_moshier": [],
+        "max_difference_seconds": 47.0
+      },
+      "moon_ingresses": {
+        "primary_count": 1,
+        "moshier_count": 1,
+        "matches": [
+          {
+            "event": {
+              "to_sign": "Овен"
+            },
+            "primary_time": "2026-11-20T08:52+03:00",
+            "moshier_time": "2026-11-20T08:52:11+03:00",
+            "difference_seconds": 11.0
+          }
+        ],
+        "missing_in_moshier": [],
+        "extra_in_moshier": [],
+        "max_difference_seconds": 11.0
+      }
+    },
+    {
+      "date": "2026-12-15",
+      "aspects": {
+        "primary_count": 3,
+        "moshier_count": 3,
+        "matches": [
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Jupiter",
+              "aspect": "оппозиция"
+            },
+            "primary_time": "2026-12-15T01:39+03:00",
+            "moshier_time": "2026-12-15T01:39:33+03:00",
+            "difference_seconds": 33.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Uranus",
+              "aspect": "квадрат"
+            },
+            "primary_time": "2026-12-15T13:18+03:00",
+            "moshier_time": "2026-12-15T13:18:04+03:00",
+            "difference_seconds": 4.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Mars",
+              "aspect": "оппозиция"
+            },
+            "primary_time": "2026-12-15T20:48+03:00",
+            "moshier_time": "2026-12-15T20:48:55+03:00",
+            "difference_seconds": 55.0
+          }
+        ],
+        "missing_in_moshier": [],
+        "extra_in_moshier": [],
+        "max_difference_seconds": 55.0
+      },
+      "moon_ingresses": {
+        "primary_count": 1,
+        "moshier_count": 1,
+        "matches": [
+          {
+            "event": {
+              "to_sign": "Рыбы"
+            },
+            "primary_time": "2026-12-15T07:35+03:00",
+            "moshier_time": "2026-12-15T07:35:37+03:00",
+            "difference_seconds": 37.0
+          }
+        ],
+        "missing_in_moshier": [],
+        "extra_in_moshier": [],
+        "max_difference_seconds": 37.0
+      }
+    },
+    {
+      "date": "2027-01-15",
+      "aspects": {
+        "primary_count": 3,
+        "moshier_count": 3,
+        "matches": [
+          {
+            "event": {
+              "planet_1": "Uranus",
+              "planet_2": "Neptune",
+              "aspect": "секстиль"
+            },
+            "primary_time": "2027-01-15T12:26+03:00",
+            "moshier_time": "2027-01-15T12:30:36+03:00",
+            "difference_seconds": 276.0
+          },
+          {
+            "event": {
+              "planet_1": "Moon",
+              "planet_2": "Jupiter",
+              "aspect": "трин"
+            },
+            "primary_time": "2027-01-15T23:08+03:00",
+            "moshier_time": "2027-01-15T23:08:59+03:00",
+            "difference_seconds": 59.0
+          },
+          {
+            "event": {
+              "planet_1": "Sun",
+              "planet_2": "Moon",
+              "aspect": "квадрат"
+            },
+            "primary_time": "2027-01-15T23:34+03:00",
+            "moshier_time": "2027-01-15T23:34:32+03:00",
+            "difference_seconds": 32.0
+          }
+        ],
+        "missing_in_moshier": [],
+        "extra_in_moshier": [],
+        "max_difference_seconds": 276.0
+      },
+      "moon_ingresses": {
+        "primary_count": 0,
+        "moshier_count": 0,
+        "matches": [],
+        "missing_in_moshier": [],
+        "extra_in_moshier": [],
+        "max_difference_seconds": 0
+      }
+    }
+  ],
+  "failures": [
+    "2027-01-15: aspects time difference exceeds 120 seconds"
+  ],
+  "status": "FAIL",
+  "limitations": [
+    "Independent event matching checks exact major aspects and Moon sign ingresses only.",
+    "Moshier is an analytical ephemeris; it is independent of JPL DE440s but not the Swiss compressed DE431 files."
+  ]
+}

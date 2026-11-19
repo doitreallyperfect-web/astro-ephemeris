@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-19T16:52:14+00:00",
+  "generated_at_utc": "2026-11-19T17:00:40+00:00",
   "timezone": "Europe/Moscow",
   "date": "2026-11-20",
   "weekday": "пятница",
@@ -121,6 +121,12 @@
       "planet_2": "Saturn",
       "aspect": "соединение",
       "exact_time_msk": "2026-11-20T23:44+03:00"
+    }
+  ],
+  "moon_ingresses": [
+    {
+      "to_sign": "Овен",
+      "exact_time_msk": "2026-11-20T08:52+03:00"
     }
   ]
 }
