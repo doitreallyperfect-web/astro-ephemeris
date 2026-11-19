@@ -160,7 +160,7 @@ def main():
       "aspect_moshier":r["aspects"]["moshier_count"],"aspect_max_seconds":r["aspects"]["max_difference_seconds"],
       "ingress_matches":len(r["moon_ingresses"]["matches"]),"ingress_primary":r["moon_ingresses"]["primary_count"],
       "ingress_moshier":r["moon_ingresses"]["moshier_count"],"ingress_max_seconds":r["moon_ingresses"]["max_difference_seconds"]} for r in reports],
-      "failures":failures}
+      "failures":failures,"event_details":[{"date":r["date"],"matches":r["aspects"]["matches"],"missing":r["aspects"]["missing_in_moshier"],"extra":r["aspects"]["extra_in_moshier"]} for r in reports]}
     print(json.dumps(summary,ensure_ascii=False,indent=2))
     if failures: raise SystemExit(1)
 if __name__=="__main__": main()
