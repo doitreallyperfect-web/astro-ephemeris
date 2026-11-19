@@ -16,9 +16,9 @@ OUT=ROOT/"data/uranus_neptune_coordinate_audit.json"
 UTC=timezone.utc
 MOSCOW=ZoneInfo("Europe/Moscow")
 DAY=datetime(2027,1,15,tzinfo=MOSCOW)
-TIMES=[DAY+timedelta(hours=9,minutes=26,seconds=29),
-       DAY+timedelta(hours=9,minutes=27,seconds=7),
-       DAY+timedelta(hours=9,minutes=30,seconds=37)]
+TIMES=[DAY+timedelta(hours=12,minutes=26,seconds=29),
+       DAY+timedelta(hours=12,minutes=27,seconds=7),
+       DAY+timedelta(hours=12,minutes=30,seconds=37)]
 BODIES={"Uranus":(swe.URANUS,"799","7"),"Neptune":(swe.NEPTUNE,"899","8")}
 FLAGS={
  "Moshier_default_apparent":swe.FLG_MOSEPH|swe.FLG_SPEED,
