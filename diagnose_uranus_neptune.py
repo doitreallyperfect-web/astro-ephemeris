@@ -38,7 +38,7 @@ def main():
         u0=sky_lon(uranus,dt-h); u1=sky_lon(uranus,dt+h)
         n0=sky_lon(neptune,dt-h); n1=sky_lon(neptune,dt+h)
         rel=wrap(n-u)
-        speed=wrap((n1-u1)-(n0-u0))/(1.0) # degrees/day over +/- 30 minutes
+        speed=wrap((n1-u1)-(n0-u0))*24.0 # degrees/day; samples are 1 hour apart
         return {"uranus_longitude_deg":u,"neptune_longitude_deg":n,
           "relative_longitude_deg":rel,"sextile_orb_deg":wrap(rel-60.0),
           "relative_speed_deg_per_day":speed}
@@ -56,11 +56,16 @@ def main():
 
     # Solve both systems at full precision within a window around the reported event.
     lo=start+timedelta(hours=8); hi=start+timedelta(hours=16)
-    sky_root=brentq(lambda t: wrap(sky_lon(neptune,start+timedelta(seconds=t))-sky_lon(uranus,start+timedelta(seconds=t))-60.0),
-                    (lo-start).total_seconds(),(hi-start).total_seconds(),xtol=0.01)
-    swe_root=brentq(lambda t: wrap(swe_lon(swe.NEPTUNE,start+timedelta(seconds=t))-swe_lon(swe.URANUS,start+timedelta(seconds=t))-60.0),
-                    (lo-start).total_seconds(),(hi-start).total_seconds(),xtol=0.01)
-    sky_dt=start+timedelta(seconds=sky_root); swe_dt=start+timedelta(seconds=swe_root)
+    roots={}
+    for target in (60.0,-60.0):
+        sky_root=brentq(lambda t: wrap(sky_lon(neptune,start+timedelta(seconds=t))-sky_lon(uranus,start+timedelta(seconds=t))-target),
+                        (lo-start).total_seconds(),(hi-start).total_seconds(),xtol=0.01)
+        swe_root=brentq(lambda t: wrap(swe_lon(swe.NEPTUNE,start+timedelta(seconds=t))-swe_lon(swe.URANUS,start+timedelta(seconds=t))-target),
+                        (lo-start).total_seconds(),(hi-start).total_seconds(),xtol=0.01)
+        roots[target]={"sky":start+timedelta(seconds=sky_root),"swe":start+timedelta(seconds=swe_root)}
+    # Select the sextile branch closest to the reported JPL event at 12:26 Moscow.
+    target=min(roots,key=lambda a:abs((roots[a]["sky"]-(target_date+timedelta(hours=12,minutes=26))).total_seconds()))
+    sky_dt=roots[target]["sky"]; swe_dt=roots[target]["swe"]
     reported_sky=target_date+timedelta(hours=12,minutes=26)
     reported_swe=target_date+timedelta(hours=12,minutes=30,seconds=36)
     points=[]
@@ -68,7 +73,7 @@ def main():
                      ("reported JPL minute",reported_sky),("reported Moshier time",reported_swe)]:
         points.append({"label":label,"time_msk":dt.isoformat(timespec="milliseconds"),
           "jpl_de440s":sky_state(dt),"moshier":swe_state(dt)})
-    result={"date":"2027-01-15","aspect":"Uranus-Neptune sextile",
+    result={"date":"2027-01-15","aspect":"Uranus-Neptune sextile","signed_target_angle_deg":target,
       "primary_ephemeris_targets":{"Uranus":"uranus barycenter","Neptune":"neptune barycenter"},
       "independent_ephemeris":"Swiss Ephemeris Moshier planet centers",
       "jpl_exact_root_msk":sky_dt.isoformat(timespec="milliseconds"),
