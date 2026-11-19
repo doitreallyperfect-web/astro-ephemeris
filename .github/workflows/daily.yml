@@ -36,6 +36,7 @@ jobs:
       - name: Independent validation of exact aspects and Moon ingresses
         run: python validate_events.py
       - name: Commit daily JSON
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
