@@ -135,7 +135,7 @@ def main() -> None:
                                 aspects.append({
                                     "_key": key, "planet_1": first, "planet_2": second,
                                     "aspect": label,
-                                    "exact_time_msk": event_dt.astimezone(MOSCOW).isoformat(timespec="minutes"),
+                                    "exact_time_msk": event_dt.astimezone(MOSCOW).isoformat(timespec="seconds"),
                                 })
 
     aspects.sort(key=lambda x: x["exact_time_msk"])
@@ -160,7 +160,7 @@ def main() -> None:
                 if start_utc <= event_dt < end_utc:
                     moon_ingresses.append({
                         "to_sign": SIGNS[boundary_index % 12],
-                        "exact_time_msk": event_dt.astimezone(MOSCOW).isoformat(timespec="minutes"),
+                        "exact_time_msk": event_dt.astimezone(MOSCOW).isoformat(timespec="seconds"),
                     })
                 break
 
