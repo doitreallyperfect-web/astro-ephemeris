@@ -54,18 +54,33 @@ def main():
           "relative_longitude_deg":wrap(n-u),"sextile_orb_deg":wrap(n-u-60.0),
           "relative_speed_deg_per_day":xn[3]-xu[3]}
 
-    # Solve both systems at full precision within a window around the reported event.
-    lo=start+timedelta(hours=8); hi=start+timedelta(hours=16)
-    roots={}
+    # Search the entire Moscow day for sign-changing brackets separately
+    # in each ephemeris and each sextile branch; never assume a fixed bracket.
+    day_end=start+timedelta(days=1)
+    def find_roots(func):
+        grid=[start+timedelta(minutes=10*i) for i in range(145)]
+        vals=[func(dt) for dt in grid]
+        found=[]
+        for i in range(len(grid)-1):
+            if vals[i]==0:
+                found.append(grid[i])
+            elif vals[i]*vals[i+1] < 0:
+                a=(grid[i]-start).total_seconds(); b=(grid[i+1]-start).total_seconds()
+                root=brentq(lambda sec: func(start+timedelta(seconds=sec)),a,b,xtol=0.01)
+                found.append(start+timedelta(seconds=root))
+        return found
+    target_date_report=target_date+timedelta(hours=12,minutes=26)
+    candidates=[]
     for target in (60.0,-60.0):
-        sky_root=brentq(lambda t: wrap(sky_lon(neptune,start+timedelta(seconds=t))-sky_lon(uranus,start+timedelta(seconds=t))-target),
-                        (lo-start).total_seconds(),(hi-start).total_seconds(),xtol=0.01)
-        swe_root=brentq(lambda t: wrap(swe_lon(swe.NEPTUNE,start+timedelta(seconds=t))-swe_lon(swe.URANUS,start+timedelta(seconds=t))-target),
-                        (lo-start).total_seconds(),(hi-start).total_seconds(),xtol=0.01)
-        roots[target]={"sky":start+timedelta(seconds=sky_root),"swe":start+timedelta(seconds=swe_root)}
-    # Select the sextile branch closest to the reported JPL event at 12:26 Moscow.
-    target=min(roots,key=lambda a:abs((roots[a]["sky"]-(target_date+timedelta(hours=12,minutes=26))).total_seconds()))
-    sky_dt=roots[target]["sky"]; swe_dt=roots[target]["swe"]
+        sky_roots=find_roots(lambda dt: wrap(sky_lon(neptune,dt)-sky_lon(uranus,dt)-target))
+        swe_roots=find_roots(lambda dt: wrap(swe_lon(swe.NEPTUNE,dt)-swe_lon(swe.URANUS,dt)-target))
+        for sky_dt in sky_roots:
+            if swe_roots:
+                swe_dt=min(swe_roots,key=lambda dt:abs((dt-sky_dt).total_seconds()))
+                candidates.append((abs((sky_dt-target_date_report).total_seconds()),target,sky_dt,swe_dt))
+    if not candidates:
+        raise RuntimeError("No Uranus-Neptune sextile root found in the Moscow day")
+    _,target,sky_dt,swe_dt=min(candidates,key=lambda x:x[0])
     reported_sky=target_date+timedelta(hours=12,minutes=26)
     reported_swe=target_date+timedelta(hours=12,minutes=30,seconds=36)
     points=[]
