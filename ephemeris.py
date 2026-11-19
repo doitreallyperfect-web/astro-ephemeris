@@ -24,7 +24,7 @@ UTC = timezone.utc
 OUT = Path("data/daily.json")
 PLANETS = {
     "Sun": "sun", "Moon": "moon", "Mercury": "mercury",
-    "Venus": "venus", "Mars": "mars", "Jupiter": "jupiter barycenter",
+    "Venus": "venus", "Mars": "mars barycenter", "Jupiter": "jupiter barycenter",
     "Saturn": "saturn barycenter", "Uranus": "uranus barycenter",
     "Neptune": "neptune barycenter", "Pluto": "pluto barycenter",
 }
