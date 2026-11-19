@@ -145,9 +145,22 @@ def main() -> None:
     moon_lon = positions["Moon"]["longitude"]
     sun_lon = positions["Sun"]["longitude"]
     elongation = (moon_lon - sun_lon) % 360.0
-    moon_phase = "новолуние" if elongation < 45 or elongation >= 315 else (
-        "первая четверть" if 45 <= elongation < 135 else (
-        "полнолуние" if 135 <= elongation < 225 else "последняя четверть"))
+    if elongation < 22.5 or elongation >= 337.5:
+        moon_phase = "новолуние"
+    elif elongation < 67.5:
+        moon_phase = "растущий серп"
+    elif elongation < 112.5:
+        moon_phase = "первая четверть"
+    elif elongation < 157.5:
+        moon_phase = "растущая Луна (между первой четвертью и полнолунием)"
+    elif elongation < 202.5:
+        moon_phase = "полнолуние"
+    elif elongation < 247.5:
+        moon_phase = "убывающая Луна (между полнолунием и последней четвертью)"
+    elif elongation < 292.5:
+        moon_phase = "последняя четверть"
+    else:
+        moon_phase = "убывающий серп"
 
     result = {
         "schema_version": 1,
