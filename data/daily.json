@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at_utc": "2026-11-19T17:38:48+00:00",
+  "generated_at_utc": "2026-11-19T17:41:11+00:00",
   "timezone": "Europe/Moscow",
   "date": "2026-11-20",
   "weekday": "пятница",
@@ -96,37 +96,37 @@
       "planet_1": "Sun",
       "planet_2": "Moon",
       "aspect": "трин",
-      "exact_time_msk": "2026-11-20T04:46+03:00"
+      "exact_time_msk": "2026-11-20T04:46:10+03:00"
     },
     {
       "planet_1": "Moon",
       "planet_2": "Neptune",
       "aspect": "соединение",
-      "exact_time_msk": "2026-11-20T12:02+03:00"
+      "exact_time_msk": "2026-11-20T12:02:50+03:00"
     },
     {
       "planet_1": "Moon",
       "planet_2": "Pluto",
       "aspect": "секстиль",
-      "exact_time_msk": "2026-11-20T14:56+03:00"
+      "exact_time_msk": "2026-11-20T14:56:29+03:00"
     },
     {
       "planet_1": "Moon",
       "planet_2": "Uranus",
       "aspect": "секстиль",
-      "exact_time_msk": "2026-11-20T15:54+03:00"
+      "exact_time_msk": "2026-11-20T15:54:30+03:00"
     },
     {
       "planet_1": "Moon",
       "planet_2": "Saturn",
       "aspect": "соединение",
-      "exact_time_msk": "2026-11-20T23:44+03:00"
+      "exact_time_msk": "2026-11-20T23:44:22+03:00"
     }
   ],
   "moon_ingresses": [
     {
       "to_sign": "Овен",
-      "exact_time_msk": "2026-11-20T08:52+03:00"
+      "exact_time_msk": "2026-11-20T08:52:14+03:00"
     }
   ]
 }
