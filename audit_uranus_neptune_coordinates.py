@@ -1,12 +1,6 @@
 #!/usr/bin/env python3
-"""Same-instant coordinate audit for Uranus and Neptune, 2027-01-15.
-
-Compares geocentric apparent tropical ecliptic-of-date longitude/latitude at
-identical UTC instants: JPL Horizons planet centers and system barycenters,
-Skyfield DE440s barycenters, and Swiss Ephemeris Moshier planet centers.
-Also records Moshier flag variants to identify frame/apparent-place differences.
-"""
-import csv, io, json, re
+"""Same-instant coordinate audit for Uranus and Neptune, 2027-01-15."""
+import json, re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlencode
@@ -37,6 +31,16 @@ def jd(dt):
  u=dt.astimezone(UTC)
  return swe.julday(u.year,u.month,u.day,u.hour+u.minute/60+u.second/3600+u.microsecond/3.6e9)
 def wrap(x): return (x+180)%360-180
+def interpolate(rows, instant):
+ keys=sorted(rows)
+ before=max(k for k in keys if k<=instant)
+ after=min(k for k in keys if k>=instant)
+ if before==after: return rows[before]
+ fraction=(instant-before).total_seconds()/(after-before).total_seconds()
+ lon1,lat1=rows[before]; lon2,lat2=rows[after]
+ lon=(lon1+fraction*wrap(lon2-lon1))%360
+ lat=lat1+fraction*(lat2-lat1)
+ return lon,lat
 def horizons(target):
  p={"format":"json","COMMAND":f"'{target}'","CENTER":"'500@399'","MAKE_EPHEM":"'YES'","EPHEM_TYPE":"'OBSERVER'",
  "START_TIME":"'2027-01-15 06:00'","STOP_TIME":"'2027-01-15 18:00'","STEP_SIZE":"'1 m'","QUANTITIES":"'31'",
@@ -47,8 +51,8 @@ def horizons(target):
  if "$$SOE" not in txt: raise RuntimeError(f"Horizons {target}: no SOE: {txt[:800]}")
  table=txt.split("$$SOE",1)[1].split("$$EOE",1)[0]
  rows={}
- dr=re.compile(r"(\\d{4}-[A-Za-z]{3}-\\d{2}\\s+\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d*)?)?)")
- nr=re.compile(r"[-+]?(?:\\d+\\.\\d*|\\.\\d+|\\d+)(?:[Ee][-+]?\\d+)?")
+ dr=re.compile(r"(\d{4}-[A-Za-z]{3}-\d{2}\s+\d{2}:\d{2}(?::\d{2}(?:\.\d*)?)?)")
+ nr=re.compile(r"[-+]?(?:\d+\.\d*|\.\d+|\d+)(?:[Ee][-+]?\d+)?")
  for line in table.splitlines():
   m=dr.search(line)
   if not m: continue
@@ -66,21 +70,21 @@ def main():
  load=Loader(str(cache)); ts=load.timescale(); eph=load("de440s.bsp")
  earth=eph["earth"]
  hdata={}; metadata={}
- for name,(body,center,bary) in BODIES.items():
+ for name,(_,center,bary) in BODIES.items():
   for label,target in [("center",center),("barycenter",bary)]:
    hdata[(name,label)],metadata[f"{name}_{label}"]=horizons(target)
  results=[]
  for dt in TIMES:
-  t=ts.from_datetime(dt.astimezone(UTC)); entry={"time_msk":dt.isoformat(),"bodies":{}}
+  instant=dt.astimezone(UTC)
+  t=ts.from_datetime(instant); entry={"time_msk":dt.isoformat(),"time_utc":instant.isoformat(),"bodies":{}}
   for name,(swe_body,_,_) in BODIES.items():
    sky_body=eph[f"{name.lower()} barycenter"]
    sky=earth.at(t).observe(sky_body).apparent().frame_latlon(ecliptic_frame)
    sky_lon=float(sky[1].degrees)%360; sky_lat=float(sky[0].degrees)
    h={}
    for label in ("center","barycenter"):
-    rows=hdata[(name,label)]
-    minute=dt.astimezone(UTC).replace(second=0,microsecond=0)
-    h[label]={"longitude_deg":rows[minute][0],"latitude_deg":rows[minute][1]}
+    lon,lat=interpolate(hdata[(name,label)],instant)
+    h[label]={"longitude_deg":lon,"latitude_deg":lat}
    swiss={}
    for flag_name,flag in FLAGS.items():
     x,_=swe.calc_ut(jd(dt),swe_body,flag)
@@ -93,12 +97,12 @@ def main():
     "skyfield_minus_horizons_barycenter_arcsec":wrap(sky_lon-h["barycenter"]["longitude_deg"])*3600,
     "horizons_center_minus_barycenter_arcsec":wrap(h["center"]["longitude_deg"]-h["barycenter"]["longitude_deg"])*3600}
   results.append(entry)
- out={"date":"2027-01-15","coordinate_convention":"geocentric apparent tropical ecliptic-of-date; compare at identical instants",
+ out={"date":"2027-01-15","coordinate_convention":"geocentric apparent tropical ecliptic-of-date; interpolated to identical UTC instants",
  "times":results,"horizons_target_metadata":metadata,
- "method_notes":["Horizons quantities 31; 1-minute sampling, nearest-minute row shown for each requested instant.",
+ "method_notes":["Horizons quantities 31; 1-minute sampling with linear interpolation to each requested second.",
  "Skyfield uses ecliptic_frame (true ecliptic and equinox of date).",
  "Swiss Ephemeris flag variants isolate nutation, J2000 frame, true-position and aberration effects.",
  "This diagnostic compares coordinates, not aspect-root times."]}
- OUT.parent.mkdir(exist_ok=True); OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\\n")
+ OUT.parent.mkdir(exist_ok=True); OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2)+"\n")
  print(json.dumps(out,ensure_ascii=False,indent=2))
 if __name__=="__main__": main()
