@@ -59,8 +59,8 @@ def horizons_series(target):
         raise RuntimeError(f"Horizons target {target}: missing ephemeris delimiters; response: {text[:1200]}")
     table=text.split("$$SOE",1)[1].split("$$EOE",1)[0]
     rows=[]
-    date_re=re.compile(r"(\\d{4}-[A-Za-z]{3}-\\d{2}\\s+\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d*)?)?)")
-    number_re=re.compile(r"[-+]?(?:\\d+\\.\\d*|\\.\\d+|\\d+)(?:[Ee][-+]?\\d+)?")
+    date_re=re.compile(r"(\d{4}-[A-Za-z]{3}-\d{2}\s+\d{2}:\d{2}(?::\d{2}(?:\.\d*)?)?)")
+    number_re=re.compile(r"[-+]?(?:\d+\.\d*|\.\d+|\d+)(?:[Ee][-+]?\d+)?")
     for line in table.splitlines():
         match=date_re.search(line)
         if not match:
