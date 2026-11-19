@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-11-19T16:38:23+00:00",
+  "timezone": "Europe/Moscow",
+  "date": "2026-11-20",
+  "weekday": "пятница",
+  "calculation": {
+    "source": "JPL DE440s via Skyfield",
+    "coordinates": "geocentric apparent tropical ecliptic-of-date longitudes",
+    "position_timestamp_msk": "2026-11-20T12:00+03:00",
+    "aspect_window_msk": [
+      "2026-11-20T00:00:00+03:00",
+      "2026-11-21T00:00:00+03:00"
+    ],
+    "aspect_search_step_minutes": 30,
+    "note": "Planetary positions are calculated values; interpretive text is not generated here."
+  },
+  "moon": {
+    "phase_approximation": "первая четверть",
+    "elongation_from_sun_deg": 123.6809
+  },
+  "positions": {
+    "Sun": {
+      "longitude": 238.049016,
+      "sign": "Скорпион",
+      "degree_in_sign": 28.049,
+      "daily_motion_deg_per_day": 1.009024,
+      "retrograde": false
+    },
+    "Moon": {
+      "longitude": 1.729932,
+      "sign": "Овен",
+      "degree_in_sign": 1.7299,
+      "daily_motion_deg_per_day": 13.29877,
+      "retrograde": false
+    },
+    "Mercury": {
+      "longitude": 218.583536,
+      "sign": "Скорпион",
+      "degree_in_sign": 8.5835,
+      "daily_motion_deg_per_day": 0.950789,
+      "retrograde": false
+    },
+    "Venus": {
+      "longitude": 203.646716,
+      "sign": "Весы",
+      "degree_in_sign": 23.6467,
+      "daily_motion_deg_per_day": 0.241051,
+      "retrograde": false
+    },
+    "Mars": {
+      "longitude": 147.681743,
+      "sign": "Лев",
+      "degree_in_sign": 27.6817,
+      "daily_motion_deg_per_day": 0.426883,
+      "retrograde": false
+    },
+    "Jupiter": {
+      "longitude": 146.203846,
+      "sign": "Лев",
+      "degree_in_sign": 26.2038,
+      "daily_motion_deg_per_day": 0.070741,
+      "retrograde": false
+    },
+    "Saturn": {
+      "longitude": 8.310596,
+      "sign": "Овен",
+      "degree_in_sign": 8.3106,
+      "daily_motion_deg_per_day": -0.036081,
+      "retrograde": true
+    },
+    "Uranus": {
+      "longitude": 63.908811,
+      "sign": "Близнецы",
+      "degree_in_sign": 3.9088,
+      "daily_motion_deg_per_day": -0.04175,
+      "retrograde": true
+    },
+    "Neptune": {
+      "longitude": 1.756215,
+      "sign": "Овен",
+      "degree_in_sign": 1.7562,
+      "daily_motion_deg_per_day": -0.012437,
+      "retrograde": true
+    },
+    "Pluto": {
+      "longitude": 303.361502,
+      "sign": "Водолей",
+      "degree_in_sign": 3.3615,
+      "daily_motion_deg_per_day": 0.016317,
+      "retrograde": false
+    }
+  },
+  "exact_aspects": [
+    {
+      "planet_1": "Sun",
+      "planet_2": "Moon",
+      "aspect": "трин",
+      "exact_time_msk": "2026-11-20T04:46+03:00"
+    },
+    {
+      "planet_1": "Moon",
+      "planet_2": "Neptune",
+      "aspect": "соединение",
+      "exact_time_msk": "2026-11-20T12:02+03:00"
+    },
+    {
+      "planet_1": "Moon",
+      "planet_2": "Pluto",
+      "aspect": "секстиль",
+      "exact_time_msk": "2026-11-20T14:56+03:00"
+    },
+    {
+      "planet_1": "Moon",
+      "planet_2": "Uranus",
+      "aspect": "секстиль",
+      "exact_time_msk": "2026-11-20T15:54+03:00"
+    },
+    {
+      "planet_1": "Moon",
+      "planet_2": "Saturn",
+      "aspect": "соединение",
+      "exact_time_msk": "2026-11-20T23:44+03:00"
+    }
+  ]
+}
