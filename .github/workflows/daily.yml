@@ -35,6 +35,8 @@ jobs:
         run: python validate.py
       - name: Compare Uranus-Neptune centers and barycenters across ephemerides
         run: python compare_uranus_neptune_variants.py
+      - name: Audit same-instant Uranus-Neptune coordinates and frames
+        run: python audit_uranus_neptune_coordinates.py
       - name: Independent validation of exact aspects and Moon ingresses
         run: python validate_events.py
       - name: Commit daily JSON
