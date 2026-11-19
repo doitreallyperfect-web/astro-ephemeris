@@ -1,0 +1,277 @@
+{
+  "validation_source": "Swiss Ephemeris Moshier (explicit MOSEPH flag)",
+  "primary_source": "JPL DE440s via Skyfield",
+  "coordinate_comparison": "geocentric apparent tropical ecliptic longitude",
+  "comparison_time": "12:00 Europe/Moscow",
+  "dates": [
+    {
+      "date": "2026-11-20",
+      "comparisons": {
+        "Sun": {
+          "skyfield_jpl_longitude": 238.049016,
+          "moshier_longitude": 238.04900901,
+          "difference_arcseconds": 0.025,
+          "moshier_speed_deg_per_day": 1.00902108,
+          "sign_moshier": "Скорпион",
+          "ephemeris_flags_returned": 260
+        },
+        "Moon": {
+          "skyfield_jpl_longitude": 1.729932,
+          "moshier_longitude": 1.73033961,
+          "difference_arcseconds": -1.467,
+          "moshier_speed_deg_per_day": 13.29859194,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Mercury": {
+          "skyfield_jpl_longitude": 218.583536,
+          "moshier_longitude": 218.58353033,
+          "difference_arcseconds": 0.02,
+          "moshier_speed_deg_per_day": 0.95078233,
+          "sign_moshier": "Скорпион",
+          "ephemeris_flags_returned": 260
+        },
+        "Venus": {
+          "skyfield_jpl_longitude": 203.646716,
+          "moshier_longitude": 203.64671509,
+          "difference_arcseconds": 0.003,
+          "moshier_speed_deg_per_day": 0.24104622,
+          "sign_moshier": "Весы",
+          "ephemeris_flags_returned": 260
+        },
+        "Mars": {
+          "skyfield_jpl_longitude": 147.681743,
+          "moshier_longitude": 147.68175317,
+          "difference_arcseconds": -0.037,
+          "moshier_speed_deg_per_day": 0.4268819,
+          "sign_moshier": "Лев",
+          "ephemeris_flags_returned": 260
+        },
+        "Jupiter": {
+          "skyfield_jpl_longitude": 146.203846,
+          "moshier_longitude": 146.20389551,
+          "difference_arcseconds": -0.178,
+          "moshier_speed_deg_per_day": 0.07074127,
+          "sign_moshier": "Лев",
+          "ephemeris_flags_returned": 260
+        },
+        "Saturn": {
+          "skyfield_jpl_longitude": 8.310596,
+          "moshier_longitude": 8.31057803,
+          "difference_arcseconds": 0.065,
+          "moshier_speed_deg_per_day": -0.03608088,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Uranus": {
+          "skyfield_jpl_longitude": 63.908811,
+          "moshier_longitude": 63.90882627,
+          "difference_arcseconds": -0.055,
+          "moshier_speed_deg_per_day": -0.04174969,
+          "sign_moshier": "Близнецы",
+          "ephemeris_flags_returned": 260
+        },
+        "Neptune": {
+          "skyfield_jpl_longitude": 1.756215,
+          "moshier_longitude": 1.75610079,
+          "difference_arcseconds": 0.411,
+          "moshier_speed_deg_per_day": -0.01243713,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Pluto": {
+          "skyfield_jpl_longitude": 303.361502,
+          "moshier_longitude": 303.36137749,
+          "difference_arcseconds": 0.448,
+          "moshier_speed_deg_per_day": 0.01631713,
+          "sign_moshier": "Водолей",
+          "ephemeris_flags_returned": 260
+        }
+      },
+      "max_absolute_difference_arcseconds": 1.467
+    },
+    {
+      "date": "2026-12-15",
+      "comparisons": {
+        "Sun": {
+          "skyfield_jpl_longitude": 263.392056,
+          "moshier_longitude": 263.39205107,
+          "difference_arcseconds": 0.018,
+          "moshier_speed_deg_per_day": 1.01731768,
+          "sign_moshier": "Стрелец",
+          "ephemeris_flags_returned": 260
+        },
+        "Moon": {
+          "skyfield_jpl_longitude": 332.221705,
+          "moshier_longitude": 332.22172452,
+          "difference_arcseconds": -0.07,
+          "moshier_speed_deg_per_day": 12.12179153,
+          "sign_moshier": "Рыбы",
+          "ephemeris_flags_returned": 260
+        },
+        "Mercury": {
+          "skyfield_jpl_longitude": 253.807881,
+          "moshier_longitude": 253.80787686,
+          "difference_arcseconds": 0.015,
+          "moshier_speed_deg_per_day": 1.54486225,
+          "sign_moshier": "Стрелец",
+          "ephemeris_flags_returned": 260
+        },
+        "Venus": {
+          "skyfield_jpl_longitude": 218.154389,
+          "moshier_longitude": 218.15436672,
+          "difference_arcseconds": 0.08,
+          "moshier_speed_deg_per_day": 0.82770225,
+          "sign_moshier": "Скорпион",
+          "ephemeris_flags_returned": 260
+        },
+        "Mars": {
+          "skyfield_jpl_longitude": 156.590835,
+          "moshier_longitude": 156.59083993,
+          "difference_arcseconds": -0.018,
+          "moshier_speed_deg_per_day": 0.27150486,
+          "sign_moshier": "Дева",
+          "ephemeris_flags_returned": 260
+        },
+        "Jupiter": {
+          "skyfield_jpl_longitude": 147.015633,
+          "moshier_longitude": 147.01567477,
+          "difference_arcseconds": -0.15,
+          "moshier_speed_deg_per_day": -0.00768512,
+          "sign_moshier": "Лев",
+          "ephemeris_flags_returned": 260
+        },
+        "Saturn": {
+          "skyfield_jpl_longitude": 7.948695,
+          "moshier_longitude": 7.94868031,
+          "difference_arcseconds": 0.053,
+          "moshier_speed_deg_per_day": 0.00803087,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Uranus": {
+          "skyfield_jpl_longitude": 62.881349,
+          "moshier_longitude": 62.88135635,
+          "difference_arcseconds": -0.026,
+          "moshier_speed_deg_per_day": -0.03856839,
+          "sign_moshier": "Близнецы",
+          "ephemeris_flags_returned": 260
+        },
+        "Neptune": {
+          "skyfield_jpl_longitude": 1.614631,
+          "moshier_longitude": 1.61451843,
+          "difference_arcseconds": 0.405,
+          "moshier_speed_deg_per_day": 0.00139747,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Pluto": {
+          "skyfield_jpl_longitude": 303.891432,
+          "moshier_longitude": 303.89131295,
+          "difference_arcseconds": 0.429,
+          "moshier_speed_deg_per_day": 0.02550068,
+          "sign_moshier": "Водолей",
+          "ephemeris_flags_returned": 260
+        }
+      },
+      "max_absolute_difference_arcseconds": 0.429
+    },
+    {
+      "date": "2027-01-15",
+      "comparisons": {
+        "Sun": {
+          "skyfield_jpl_longitude": 294.97329,
+          "moshier_longitude": 294.97328981,
+          "difference_arcseconds": 0.001,
+          "moshier_speed_deg_per_day": 1.0185812,
+          "sign_moshier": "Козерог",
+          "ephemeris_flags_returned": 260
+        },
+        "Moon": {
+          "skyfield_jpl_longitude": 19.107519,
+          "moshier_longitude": 19.1073562,
+          "difference_arcseconds": 0.586,
+          "moshier_speed_deg_per_day": 13.08507866,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Mercury": {
+          "skyfield_jpl_longitude": 303.564228,
+          "moshier_longitude": 303.56422324,
+          "difference_arcseconds": 0.017,
+          "moshier_speed_deg_per_day": 1.68446431,
+          "sign_moshier": "Водолей",
+          "ephemeris_flags_returned": 260
+        },
+        "Venus": {
+          "skyfield_jpl_longitude": 248.510332,
+          "moshier_longitude": 248.51032399,
+          "difference_arcseconds": 0.029,
+          "moshier_speed_deg_per_day": 1.08240532,
+          "sign_moshier": "Стрелец",
+          "ephemeris_flags_returned": 260
+        },
+        "Mars": {
+          "skyfield_jpl_longitude": 160.278293,
+          "moshier_longitude": 160.27830002,
+          "difference_arcseconds": -0.025,
+          "moshier_speed_deg_per_day": -0.06269003,
+          "sign_moshier": "Дева",
+          "ephemeris_flags_returned": 260
+        },
+        "Jupiter": {
+          "skyfield_jpl_longitude": 145.275624,
+          "moshier_longitude": 145.27565028,
+          "difference_arcseconds": -0.095,
+          "moshier_speed_deg_per_day": -0.09984268,
+          "sign_moshier": "Лев",
+          "ephemeris_flags_returned": 260
+        },
+        "Saturn": {
+          "skyfield_jpl_longitude": 9.049089,
+          "moshier_longitude": 9.04908262,
+          "difference_arcseconds": 0.023,
+          "moshier_speed_deg_per_day": 0.06149628,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Uranus": {
+          "skyfield_jpl_longitude": 61.934033,
+          "moshier_longitude": 61.93403551,
+          "difference_arcseconds": -0.009,
+          "moshier_speed_deg_per_day": -0.02040273,
+          "sign_moshier": "Близнецы",
+          "ephemeris_flags_returned": 260
+        },
+        "Neptune": {
+          "skyfield_jpl_longitude": 1.933312,
+          "moshier_longitude": 1.93320262,
+          "difference_arcseconds": 0.394,
+          "moshier_speed_deg_per_day": 0.01879095,
+          "sign_moshier": "Овен",
+          "ephemeris_flags_returned": 260
+        },
+        "Pluto": {
+          "skyfield_jpl_longitude": 304.791819,
+          "moshier_longitude": 304.79170684,
+          "difference_arcseconds": 0.404,
+          "moshier_speed_deg_per_day": 0.03141285,
+          "sign_moshier": "Водолей",
+          "ephemeris_flags_returned": 260
+        }
+      },
+      "max_absolute_difference_arcseconds": 0.586
+    }
+  ],
+  "max_absolute_difference_arcseconds": 1.467,
+  "warning_threshold_arcseconds": 30.0,
+  "failure_threshold_arcseconds": 120.0,
+  "warnings": [],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Checks planetary longitudes only, not exact aspect event times.",
+    "DE440s uses planetary-system barycenters for several outer planets while Moshier returns planet centers, which can cause small physical offsets.",
+    "Moshier is an independent analytical ephemeris, not Swiss compressed DE431 files."
+  ]
+}
