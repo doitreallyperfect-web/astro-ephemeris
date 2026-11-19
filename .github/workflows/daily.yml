@@ -31,6 +31,8 @@ jobs:
         env:
           TARGET_DATE: ${{ inputs.target_date }}
         run: python ephemeris.py
+      - name: Independent cross-check against Moshier on three dates
+        run: python validate.py
       - name: Commit daily JSON
         run: |
           git config user.name "github-actions[bot]"
