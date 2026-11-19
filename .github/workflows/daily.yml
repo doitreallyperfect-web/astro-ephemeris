@@ -42,6 +42,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/daily.json data/validation.json data/event_validation.json data/uranus_neptune_diagnostic.json
+          git add -A data/
           git diff --cached --quiet || git commit -m "Update daily ephemeris"
           git push
