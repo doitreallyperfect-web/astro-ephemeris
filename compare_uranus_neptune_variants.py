@@ -10,7 +10,7 @@ Variants:
 All Horizons requests use geocentric apparent observer ecliptic longitude/latitude
 (quantities 31), airless apparent coordinates, and UTC sampling.
 """
-import csv, io, json, math, time
+import csv, io, json, math, time, re
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlencode
@@ -52,22 +52,38 @@ def horizons_series(target):
     url="https://ssd.jpl.nasa.gov/api/horizons.api?"+urlencode(params)
     with urlopen(url,timeout=60) as response:
         payload=json.loads(response.read().decode("utf-8"))
-    if "error" in payload: raise RuntimeError(f"Horizons target {target}: {payload['error']}")
-    text=payload["result"]
-    if "$$SOE" not in text: raise RuntimeError(f"Horizons response missing ephemeris table for {target}: {text[:500]}")
+    if payload.get("error"):
+        raise RuntimeError(f"Horizons target {target}: {payload['error']}")
+    text=payload.get("result","")
+    if "$$SOE" not in text or "$$EOE" not in text:
+        raise RuntimeError(f"Horizons target {target}: missing ephemeris delimiters; response: {text[:1200]}")
     table=text.split("$$SOE",1)[1].split("$$EOE",1)[0]
     rows=[]
-    for row in csv.reader(io.StringIO(table)):
-        if len(row)<3: continue
-        # Horizons quantity 31 table: calendar date, ObsEcLon, ObsEcLat.
-        try:
-            stamp=row[0].strip()
-            dt=datetime.strptime(stamp,"%Y-%b-%d %H:%M").replace(tzinfo=UTC)
-            lon=float(row[1].strip())
-            rows.append((dt,lon%360))
-        except (ValueError,IndexError):
+    date_re=re.compile(r"(\\d{4}-[A-Za-z]{3}-\\d{2}\\s+\\d{2}:\\d{2}(?::\\d{2}(?:\\.\\d*)?)?)")
+    number_re=re.compile(r"[-+]?(?:\\d+\\.\\d*|\\.\\d+|\\d+)(?:[Ee][-+]?\\d+)?")
+    for line in table.splitlines():
+        match=date_re.search(line)
+        if not match:
             continue
-    if len(rows)<100: raise RuntimeError(f"Too few Horizons rows for target {target}: {len(rows)}")
+        stamp=match.group(1)
+        dt=None
+        for fmt in ("%Y-%b-%d %H:%M:%S.%f","%Y-%b-%d %H:%M:%S","%Y-%b-%d %H:%M"):
+            try:
+                dt=datetime.strptime(stamp,fmt).replace(tzinfo=UTC)
+                break
+            except ValueError:
+                pass
+        if dt is None:
+            continue
+        nums=number_re.findall(line[match.end():])
+        if len(nums)<2:
+            continue
+        rows.append((dt,float(nums[0])%360.0))
+    rows=sorted({dt:lon for dt,lon in rows}.items())
+    rows=[(dt,lon) for dt,lon in rows]
+    if len(rows)<100:
+        preview="\\n".join(table.splitlines()[:8])
+        raise RuntimeError(f"Horizons target {target}: parsed only {len(rows)} rows; raw table preview: {preview}")
     return rows
 
 def interpolated_root(u_rows,n_rows):
