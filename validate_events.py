@@ -42,34 +42,45 @@ def moshier_events(day):
     names=list(BODIES)
     for i,a in enumerate(names):
       for b in names[i+1:]:
-        for target,label in ASPECTS.items():
-          def fn(t): return wrap(lon(b,t)-lon(a,t)-target)
-          vals=[wrap(lons[b][k]-lons[a][k]-target) for k in range(len(times))]
-          for k in range(len(times)-1):
-            if vals[k]==0:
-              root=times[k]
-            elif vals[k]*vals[k+1]>0:
-              continue
-            else:
-              lo,hi=times[k],times[k+1]
-              # Bisection is stable for the short 10-minute bracket.
-              flo=fn(lo)
-              for _ in range(35):
-                mid=lo+(hi-lo)/2
-                fm=fn(mid)
-                if (flo<=0 and fm>=0) or (flo>=0 and fm<=0): hi=mid
-                else: lo=mid; flo=fm
-              root=lo+(hi-lo)/2
-            if start<=root<end:
-              aspects.append({"planet_1":a,"planet_2":b,"aspect":label,
-                "time":root.astimezone(MOSCOW).isoformat(timespec="seconds")})
-    # Deduplicate same aspect found at a sample exactly on the root.
+        # Unwrap relative longitude and search exact angular branches. This avoids
+        # false roots at the +/-180 discontinuity of a wrapped-angle function.
+        raw=[(lons[b][k]-lons[a][k])*math.pi/180.0 for k in range(len(times))]
+        rel=[]
+        for value in raw:
+          if not rel: rel.append(value*180.0/math.pi)
+          else: rel.append(rel[-1]+wrap(value*180.0/math.pi-rel[-1]))
+        for angle,label in [(0,"соединение"),(60,"секстиль"),(90,"квадрат"),(120,"трин"),(180,"оппозиция")]:
+          targets=set()
+          for value in rel:
+            center=round((value-angle)/360)
+            for kk in range(center-1,center+2): targets.add(angle+360*kk)
+            if angle not in (0,180):
+              center2=round((value+angle)/360)
+              for kk in range(center2-1,center2+2): targets.add(-angle+360*kk)
+          for target in sorted(targets):
+            vals=[value-target for value in rel]
+            for k in range(len(times)-1):
+              if vals[k]==0: root=times[k]
+              elif vals[k]*vals[k+1]>0: continue
+              else:
+                lo,hi=times[k],times[k+1]
+                def fn(t):
+                  return wrap(lon(b,t)-lon(a,t)-target)
+                flo=fn(lo)
+                for _ in range(40):
+                  mid=lo+(hi-lo)/2; fm=fn(mid)
+                  if (flo<=0 and fm>=0) or (flo>=0 and fm<=0): hi=mid
+                  else: lo=mid; flo=fm
+                root=lo+(hi-lo)/2
+              if start<=root<end:
+                aspects.append({"planet_1":a,"planet_2":b,"aspect":label,
+                  "time":root.astimezone(MOSCOW).isoformat(timespec="seconds")})
     unique={}
-    for e in aspects:
-      key=(e["planet_1"],e["planet_2"],e["aspect"],round(datetime.fromisoformat(e["time"]).timestamp()/60))
-      unique[key]=e
+    for event in aspects:
+      key=(event["planet_1"],event["planet_2"],event["aspect"],round(datetime.fromisoformat(event["time"]).timestamp()/60))
+      unique[key]=event
     aspects=list(unique.values())
-    aspects.sort(key=lambda e:e["time"])
+    aspects.sort(key=lambda event:event["time"])
 
     moon=lons["Moon"]
     unwrapped=[]
