@@ -1,0 +1,46 @@
+{
+  "date": "2027-01-15",
+  "aspect": "Uranus-Neptune sextile",
+  "signed_relative_angle_deg": -60,
+  "coordinate_convention": "geocentric apparent tropical ecliptic-of-date longitude",
+  "center": "Earth geocenter (500@399) for Horizons; Earth observer for Skyfield and Moshier",
+  "horizons_settings": {
+    "quantities": "31 (observer ecliptic longitude/latitude)",
+    "apparent": "airless",
+    "step": "1 minute",
+    "resolved_targets": {}
+  },
+  "variants": {
+    "DE440s_barycenters": {
+      "uranus": "uranus barycenter",
+      "neptune": "neptune barycenter",
+      "root_utc": "2027-01-15T09:26:28.701064+00:00",
+      "root_msk": "2027-01-15T12:26:28.701+03:00",
+      "difference_from_Horizons_planet_centers_seconds": -38.137
+    },
+    "Moshier_planet_centers": {
+      "uranus": "Swiss Ephemeris Uranus center",
+      "neptune": "Swiss Ephemeris Neptune center",
+      "root_utc": "2027-01-15T09:30:36.993568+00:00",
+      "root_msk": "2027-01-15T12:30:36.993+03:00",
+      "difference_from_Horizons_planet_centers_seconds": 210.155
+    },
+    "Horizons_planet_centers": {
+      "uranus": "799 Uranus center",
+      "neptune": "899 Neptune center",
+      "root_utc": "2027-01-15T09:27:06.838235+00:00",
+      "sampling": "1 minute; linear interpolation between adjacent samples",
+      "root_msk": "2027-01-15T12:27:06.838+03:00",
+      "difference_from_Horizons_planet_centers_seconds": 0.0
+    },
+    "Horizons_system_barycenters": {
+      "uranus": "7 Uranus-system barycenter",
+      "neptune": "8 Neptune-system barycenter",
+      "root_utc": "2027-01-15T09:26:29.117647+00:00",
+      "sampling": "1 minute; linear interpolation between adjacent samples",
+      "root_msk": "2027-01-15T12:26:29.117+03:00",
+      "difference_from_Horizons_planet_centers_seconds": -37.721
+    }
+  },
+  "note": "DE440s contains planetary-system barycenter targets for these outer planets; it does not provide separate Uranus/Neptune center targets in this kernel. Horizons supplies center and barycenter targets independently. Moshier provides planet centers, not a separate system-barycenter solution."
+}
