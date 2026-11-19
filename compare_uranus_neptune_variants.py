@@ -148,7 +148,7 @@ def main():
       "date":"2027-01-15","aspect":"Uranus-Neptune sextile","signed_relative_angle_deg":-60,
       "coordinate_convention":"geocentric apparent tropical ecliptic-of-date longitude",
       "center":"Earth geocenter (500@399) for Horizons; Earth observer for Skyfield and Moshier",
-      "horizons_settings":{"quantities":"31 (observer ecliptic longitude/latitude)","apparent":"airless","step":"1 minute"},
+      "horizons_settings":{"quantities":"31 (observer ecliptic longitude/latitude)","apparent":"airless","step":"1 minute","resolved_targets":HORIZONS_META},
       "variants":variants,
       "note":"DE440s contains planetary-system barycenter targets for these outer planets; it does not provide separate Uranus/Neptune center targets in this kernel. Horizons supplies center and barycenter targets independently. Moshier provides planet centers, not a separate system-barycenter solution."
     }
