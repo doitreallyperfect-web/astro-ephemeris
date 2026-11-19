@@ -1,0 +1,88 @@
+{
+  "date": "2027-01-15",
+  "aspect": "Uranus-Neptune sextile",
+  "signed_target_angle_deg": -60.0,
+  "primary_ephemeris_targets": {
+    "Uranus": "uranus barycenter",
+    "Neptune": "neptune barycenter"
+  },
+  "independent_ephemeris": "Swiss Ephemeris Moshier planet centers",
+  "jpl_exact_root_msk": "2027-01-15T09:26:28.699+00:00",
+  "moshier_exact_root_msk": "2027-01-15T09:30:36.166+00:00",
+  "root_difference_seconds": 247.467,
+  "points": [
+    {
+      "label": "JPL exact root",
+      "time_msk": "2027-01-15T09:26:28.699+00:00",
+      "jpl_de440s": {
+        "uranus_longitude_deg": 61.93365777319156,
+        "neptune_longitude_deg": 1.933657772370341,
+        "relative_longitude_deg": -60.00000000082122,
+        "sextile_orb_deg": -120.00000000082122,
+        "relative_speed_deg_per_day": 0.03918907741285693
+      },
+      "moshier": {
+        "uranus_longitude_deg": 61.933660480745836,
+        "neptune_longitude_deg": 1.9335482362416718,
+        "relative_longitude_deg": -60.000112244504166,
+        "sextile_orb_deg": -120.00011224450417,
+        "relative_speed_deg_per_day": 0.039188838886820926
+      }
+    },
+    {
+      "label": "Moshier exact root",
+      "time_msk": "2027-01-15T09:30:36.166+00:00",
+      "jpl_de440s": {
+        "uranus_longitude_deg": 61.93359938024773,
+        "neptune_longitude_deg": 1.9337116237608105,
+        "relative_longitude_deg": -59.99988775648691,
+        "sextile_orb_deg": -119.99988775648691,
+        "relative_speed_deg_per_day": 0.039188324032693345
+      },
+      "moshier": {
+        "uranus_longitude_deg": 61.933602087610566,
+        "neptune_longitude_deg": 1.9336020880071234,
+        "relative_longitude_deg": -59.999999999603446,
+        "sextile_orb_deg": -119.99999999960345,
+        "relative_speed_deg_per_day": 0.039188090808043516
+      }
+    },
+    {
+      "label": "reported JPL minute",
+      "time_msk": "2027-01-15T12:26:00.000+03:00",
+      "jpl_de440s": {
+        "uranus_longitude_deg": 61.933664545549874,
+        "neptune_longitude_deg": 1.9336515273999735,
+        "relative_longitude_deg": -60.0000130181499,
+        "sextile_orb_deg": -120.0000130181499,
+        "relative_speed_deg_per_day": 0.03918916477687162
+      },
+      "moshier": {
+        "uranus_longitude_deg": 61.93366725304305,
+        "neptune_longitude_deg": 1.9335419912899914,
+        "relative_longitude_deg": -60.000125261753055,
+        "sextile_orb_deg": -120.00012526175306,
+        "relative_speed_deg_per_day": 0.03918894741917395
+      }
+    },
+    {
+      "label": "reported Moshier time",
+      "time_msk": "2027-01-15T12:30:36.000+03:00",
+      "jpl_de440s": {
+        "uranus_longitude_deg": 61.933599419467264,
+        "neptune_longitude_deg": 1.933711587588163,
+        "relative_longitude_deg": -59.99988783187911,
+        "sextile_orb_deg": -119.99988783187911,
+        "relative_speed_deg_per_day": 0.039188324538827146
+      },
+      "moshier": {
+        "uranus_longitude_deg": 61.93360212684091,
+        "neptune_longitude_deg": 1.9336020517910832,
+        "relative_longitude_deg": -60.000000075049826,
+        "sextile_orb_deg": -120.00000007504983,
+        "relative_speed_deg_per_day": 0.03918809723815922
+      }
+    }
+  ],
+  "interpretation_note": "Compare the relative longitudes and relative speeds at identical timestamps. The primary uses planetary-system barycenters while Moshier calculates planet centers; this is a potential non-like-for-like comparison, not yet a proven cause."
+}
