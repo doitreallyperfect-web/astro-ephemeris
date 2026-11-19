@@ -1,0 +1,360 @@
+{
+  "date": "2027-01-15",
+  "coordinate_convention": "geocentric apparent tropical ecliptic-of-date; interpolated to identical UTC instants",
+  "times": [
+    {
+      "time_msk": "2027-01-15T09:26:29+03:00",
+      "time_utc": "2027-01-15T06:26:29+00:00",
+      "bodies": {
+        "Uranus": {
+          "skyfield_de440s_barycenter": {
+            "longitude_deg": 61.93621237736894,
+            "latitude_deg": -0.13715561539883045
+          },
+          "horizons": {
+            "center": {
+              "longitude_deg": 61.93621423666666,
+              "latitude_deg": -0.13716055166666666
+            },
+            "barycenter": {
+              "longitude_deg": 61.93619943666666,
+              "latitude_deg": -0.13716120333333334
+            }
+          },
+          "swiss_ephemeris": {
+            "Moshier_default_apparent": {
+              "longitude_deg": 61.936215088007984,
+              "latitude_deg": -0.13714856852741203,
+              "delta_lon_vs_horizons_center_arcsec": 0.0030648287747681024,
+              "delta_lon_vs_horizons_barycenter_arcsec": 0.05634482878349445
+            },
+            "Moshier_no_nutation": {
+              "longitude_deg": 61.93311786342593,
+              "latitude_deg": -0.13714856852741167,
+              "delta_lon_vs_horizons_center_arcsec": -11.146943666653897,
+              "delta_lon_vs_horizons_barycenter_arcsec": -11.09366366664517
+            },
+            "Moshier_J2000": {
+              "longitude_deg": 61.55539617104867,
+              "latitude_deg": -0.14039111658547548,
+              "delta_lon_vs_horizons_center_arcsec": -1370.9450362247026,
+              "delta_lon_vs_horizons_barycenter_arcsec": -1370.8917562247962
+            },
+            "Moshier_true_position": {
+              "longitude_deg": 61.933994760359454,
+              "latitude_deg": -0.1371204803569813,
+              "delta_lon_vs_horizons_center_arcsec": -7.990114705933138,
+              "delta_lon_vs_horizons_barycenter_arcsec": -7.9368347059244115
+            },
+            "Moshier_no_aberration": {
+              "longitude_deg": 61.93271427040775,
+              "latitude_deg": -0.13713743848640544,
+              "delta_lon_vs_horizons_center_arcsec": -12.59987853209168,
+              "delta_lon_vs_horizons_barycenter_arcsec": -12.546598532082953
+            }
+          },
+          "skyfield_minus_horizons_barycenter_arcsec": 0.04658652819671261,
+          "horizons_center_minus_barycenter_arcsec": 0.05328000000872635
+        },
+        "Neptune": {
+          "skyfield_de440s_barycenter": {
+            "longitude_deg": 1.9313118278725057,
+            "latitude_deg": -1.3683396858702037
+          },
+          "horizons": {
+            "center": {
+              "longitude_deg": 1.9312962833333311,
+              "latitude_deg": -1.3683336066666667
+            },
+            "barycenter": {
+              "longitude_deg": 1.9312986833333312,
+              "latitude_deg": -1.3683342066666666
+            }
+          },
+          "swiss_ephemeris": {
+            "Moshier_default_apparent": {
+              "longitude_deg": 1.9312022793986934,
+              "latitude_deg": -1.3682730175055517,
+              "delta_lon_vs_horizons_center_arcsec": -0.3384141646847638,
+              "delta_lon_vs_horizons_barycenter_arcsec": -0.34705416468341355
+            },
+            "Moshier_no_nutation": {
+              "longitude_deg": 1.9281050548166363,
+              "latitude_deg": -1.3682730175055517,
+              "delta_lon_vs_horizons_center_arcsec": -11.488422660113429,
+              "delta_lon_vs_horizons_barycenter_arcsec": -11.497062660112078
+            },
+            "Moshier_J2000": {
+              "longitude_deg": 1.550303009958139,
+              "latitude_deg": -1.3686873117105238,
+              "delta_lon_vs_horizons_center_arcsec": -1371.575784150707,
+              "delta_lon_vs_horizons_barycenter_arcsec": -1371.5844241507057
+            },
+            "Moshier_true_position": {
+              "longitude_deg": 1.934485058928445,
+              "latitude_deg": -1.3681663007592313,
+              "delta_lon_vs_horizons_center_arcsec": 11.479592142381989,
+              "delta_lon_vs_horizons_barycenter_arcsec": 11.47095214238334
+            },
+            "Moshier_no_aberration": {
+              "longitude_deg": 1.9334428619671726,
+              "latitude_deg": -1.3681455194385914,
+              "delta_lon_vs_horizons_center_arcsec": 7.727683081827763,
+              "delta_lon_vs_horizons_barycenter_arcsec": 7.719043081829113
+            }
+          },
+          "skyfield_minus_horizons_barycenter_arcsec": 0.04732034100243254,
+          "horizons_center_minus_barycenter_arcsec": -0.008639999998649728
+        }
+      }
+    },
+    {
+      "time_msk": "2027-01-15T09:27:07+03:00",
+      "time_utc": "2027-01-15T06:27:07+00:00",
+      "bodies": {
+        "Uranus": {
+          "skyfield_de440s_barycenter": {
+            "longitude_deg": 61.936203367188575,
+            "latitude_deg": -0.13715550158510242
+          },
+          "horizons": {
+            "center": {
+              "longitude_deg": 61.93620523166667,
+              "latitude_deg": -0.13716047666666667
+            },
+            "barycenter": {
+              "longitude_deg": 61.93619043166667,
+              "latitude_deg": -0.1371610766666667
+            }
+          },
+          "swiss_ephemeris": {
+            "Moshier_default_apparent": {
+              "longitude_deg": 61.936206078118786,
+              "latitude_deg": -0.13714845472674275,
+              "delta_lon_vs_horizons_center_arcsec": 0.0030472275966531015,
+              "delta_lon_vs_horizons_barycenter_arcsec": 0.05632722760537945
+            },
+            "Moshier_no_nutation": {
+              "longitude_deg": 61.933108859250446,
+              "latitude_deg": -0.13714845472673598,
+              "delta_lon_vs_horizons_center_arcsec": -11.14694069840425,
+              "delta_lon_vs_horizons_barycenter_arcsec": -11.093660698395524
+            },
+            "Moshier_J2000": {
+              "longitude_deg": 61.55538715005197,
+              "latitude_deg": -0.14039100270987268,
+              "delta_lon_vs_horizons_center_arcsec": -1370.9450938129407,
+              "delta_lon_vs_horizons_barycenter_arcsec": -1370.891813812932
+            },
+            "Moshier_true_position": {
+              "longitude_deg": 61.933985786550956,
+              "latitude_deg": -0.13712036652086554,
+              "delta_lon_vs_horizons_center_arcsec": -7.990002416568132,
+              "delta_lon_vs_horizons_barycenter_arcsec": -7.936722416559405
+            },
+            "Moshier_no_aberration": {
+              "longitude_deg": 61.932705296786246,
+              "latitude_deg": -0.13713732464975728,
+              "delta_lon_vs_horizons_center_arcsec": -12.599765569575538,
+              "delta_lon_vs_horizons_barycenter_arcsec": -12.546485569464494
+            }
+          },
+          "skyfield_minus_horizons_barycenter_arcsec": 0.04656787887142855,
+          "horizons_center_minus_barycenter_arcsec": 0.05328000000872635
+        },
+        "Neptune": {
+          "skyfield_de440s_barycenter": {
+            "longitude_deg": 1.931320068017157,
+            "latitude_deg": -1.3683394167317515
+          },
+          "horizons": {
+            "center": {
+              "longitude_deg": 1.9313045166666662,
+              "latitude_deg": -1.3683333416666668
+            },
+            "barycenter": {
+              "longitude_deg": 1.9313069166666663,
+              "latitude_deg": -1.3683339533333332
+            }
+          },
+          "swiss_ephemeris": {
+            "Moshier_default_apparent": {
+              "longitude_deg": 1.9312105193836966,
+              "latitude_deg": -1.3682727483925843,
+              "delta_lon_vs_horizons_center_arcsec": -0.33839021865560426,
+              "delta_lon_vs_horizons_barycenter_arcsec": -0.347030218654254
+            },
+            "Moshier_no_nutation": {
+              "longitude_deg": 1.9281133005153515,
+              "latitude_deg": -1.368272748392584,
+              "delta_lon_vs_horizons_center_arcsec": -11.488378144758826,
+              "delta_lon_vs_horizons_barycenter_arcsec": -11.497018144757476
+            },
+            "Moshier_J2000": {
+              "longitude_deg": 1.5503112388484186,
+              "latitude_deg": -1.3686870431195486,
+              "delta_lon_vs_horizons_center_arcsec": -1371.5758001456948,
+              "delta_lon_vs_horizons_barycenter_arcsec": -1371.5844401456934
+            },
+            "Moshier_true_position": {
+              "longitude_deg": 1.9344933392781136,
+              "latitude_deg": -1.3681660320948135,
+              "delta_lon_vs_horizons_center_arcsec": 11.479761401164978,
+              "delta_lon_vs_horizons_barycenter_arcsec": 11.471121401166329
+            },
+            "Moshier_no_aberration": {
+              "longitude_deg": 1.9334511422139595,
+              "latitude_deg": -1.368145250777926,
+              "delta_lon_vs_horizons_center_arcsec": 7.727851970219035,
+              "delta_lon_vs_horizons_barycenter_arcsec": 7.719211970220385
+            }
+          },
+          "skyfield_minus_horizons_barycenter_arcsec": 0.04734486175266284,
+          "horizons_center_minus_barycenter_arcsec": -0.008639999998649728
+        }
+      }
+    },
+    {
+      "time_msk": "2027-01-15T09:30:37+03:00",
+      "time_utc": "2027-01-15T06:30:37+00:00",
+      "bodies": {
+        "Uranus": {
+          "skyfield_de440s_barycenter": {
+            "longitude_deg": 61.93615357682357,
+            "latitude_deg": -0.13715487261242754
+          },
+          "horizons": {
+            "center": {
+              "longitude_deg": 61.93615544333333,
+              "latitude_deg": -0.13715977666666668
+            },
+            "barycenter": {
+              "longitude_deg": 61.936140643333324,
+              "latitude_deg": -0.13716047666666667
+            }
+          },
+          "swiss_ephemeris": {
+            "Moshier_default_apparent": {
+              "longitude_deg": 61.936156287566625,
+              "latitude_deg": -0.13714782581939158,
+              "delta_lon_vs_horizons_center_arcsec": 0.0030392398230105755,
+              "delta_lon_vs_horizons_barycenter_arcsec": 0.056319239934055076
+            },
+            "Moshier_no_nutation": {
+              "longitude_deg": 61.93305910024121,
+              "latitude_deg": -0.13714782581939167,
+              "delta_lon_vs_horizons_center_arcsec": -11.146835131648913,
+              "delta_lon_vs_horizons_barycenter_arcsec": -11.093555131640187
+            },
+            "Moshier_J2000": {
+              "longitude_deg": 61.55533729808344,
+              "latitude_deg": -0.14039037338848623,
+              "delta_lon_vs_horizons_center_arcsec": -1370.945322899604,
+              "delta_lon_vs_horizons_barycenter_arcsec": -1370.8920428995953
+            },
+            "Moshier_true_position": {
+              "longitude_deg": 61.93393619717953,
+              "latitude_deg": -0.13711973742445685,
+              "delta_lon_vs_horizons_center_arcsec": -7.9892861536791315,
+              "delta_lon_vs_horizons_barycenter_arcsec": -7.936006153670405
+            },
+            "Moshier_no_aberration": {
+              "longitude_deg": 61.932655707520055,
+              "latitude_deg": -0.13713669554729666,
+              "delta_lon_vs_horizons_center_arcsec": -12.599048927802414,
+              "delta_lon_vs_horizons_barycenter_arcsec": -12.545768927793688
+            }
+          },
+          "skyfield_minus_horizons_barycenter_arcsec": 0.04656056486282978,
+          "horizons_center_minus_barycenter_arcsec": 0.05328000000872635
+        },
+        "Neptune": {
+          "skyfield_de440s_barycenter": {
+            "longitude_deg": 1.9313656074840388,
+            "latitude_deg": -1.3683379294091664
+          },
+          "horizons": {
+            "center": {
+              "longitude_deg": 1.931350016666664,
+              "latitude_deg": -1.3683318533333333
+            },
+            "barycenter": {
+              "longitude_deg": 1.931352416666664,
+              "latitude_deg": -1.3683324533333334
+            }
+          },
+          "swiss_ephemeris": {
+            "Moshier_default_apparent": {
+              "longitude_deg": 1.9312560591570145,
+              "latitude_deg": -1.3682712611852457,
+              "delta_lon_vs_horizons_center_arcsec": -0.33824703473328555,
+              "delta_lon_vs_horizons_barycenter_arcsec": -0.3468870347319353
+            },
+            "Moshier_no_nutation": {
+              "longitude_deg": 1.9281588718316054,
+              "latitude_deg": -1.3682712611852457,
+              "delta_lon_vs_horizons_center_arcsec": -11.48812140620521,
+              "delta_lon_vs_horizons_barycenter_arcsec": -11.49676140620386
+            },
+            "Moshier_J2000": {
+              "longitude_deg": 1.5503567172759312,
+              "latitude_deg": -1.3686855587970932,
+              "delta_lon_vs_horizons_center_arcsec": -1371.575877806606,
+              "delta_lon_vs_horizons_barycenter_arcsec": -1371.5845178066047
+            },
+            "Moshier_true_position": {
+              "longitude_deg": 1.934539100939289,
+              "latitude_deg": -1.3681645473917479,
+              "delta_lon_vs_horizons_center_arcsec": 11.480703381482726,
+              "delta_lon_vs_horizons_barycenter_arcsec": 11.472063381484077
+            },
+            "Moshier_no_aberration": {
+              "longitude_deg": 1.9334969039394667,
+              "latitude_deg": -1.3681437661024034,
+              "delta_lon_vs_horizons_center_arcsec": 7.7287941820827655,
+              "delta_lon_vs_horizons_barycenter_arcsec": 7.720154182084116
+            }
+          },
+          "skyfield_minus_horizons_barycenter_arcsec": 0.04748694258296382,
+          "horizons_center_minus_barycenter_arcsec": -0.008639999998649728
+        }
+      }
+    }
+  ],
+  "horizons_target_metadata": {
+    "Uranus_center": {
+      "targetname": null,
+      "signature": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      }
+    },
+    "Uranus_barycenter": {
+      "targetname": null,
+      "signature": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      }
+    },
+    "Neptune_center": {
+      "targetname": null,
+      "signature": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      }
+    },
+    "Neptune_barycenter": {
+      "targetname": null,
+      "signature": {
+        "source": "NASA/JPL Horizons API",
+        "version": "1.2"
+      }
+    }
+  },
+  "method_notes": [
+    "Horizons quantities 31; 1-minute sampling with linear interpolation to each requested second.",
+    "Skyfield uses ecliptic_frame (true ecliptic and equinox of date).",
+    "Swiss Ephemeris flag variants isolate nutation, J2000 frame, true-position and aberration effects.",
+    "This diagnostic compares coordinates, not aspect-root times."
+  ]
+}
