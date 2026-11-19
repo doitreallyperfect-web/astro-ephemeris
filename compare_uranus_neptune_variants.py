@@ -30,6 +30,7 @@ FLAGS=swe.FLG_MOSEPH|swe.FLG_SPEED
 START=datetime(2027,1,15,6,0,tzinfo=UTC)
 STOP=datetime(2027,1,15,18,0,tzinfo=UTC)
 STEP=timedelta(minutes=1)
+HORIZONS_META = {}
 
 def wrap(x): return (x+180.0)%360.0-180.0
 def jd(dt):
