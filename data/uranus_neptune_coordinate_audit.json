@@ -325,8 +325,8 @@
     "Uranus_center": {
       "targetname": null,
       "signature": {
-        "source": "NASA/JPL Horizons API",
-        "version": "1.2"
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
       }
     },
     "Uranus_barycenter": {
@@ -339,15 +339,15 @@
     "Neptune_center": {
       "targetname": null,
       "signature": {
-        "version": "1.2",
-        "source": "NASA/JPL Horizons API"
+        "source": "NASA/JPL Horizons API",
+        "version": "1.2"
       }
     },
     "Neptune_barycenter": {
       "targetname": null,
       "signature": {
-        "source": "NASA/JPL Horizons API",
-        "version": "1.2"
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
       }
     }
   },
